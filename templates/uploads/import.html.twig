@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %} 
+{% block title %}Import file{% endblock %}
+{% block description %}This page will render a simple form to upload a file.{% endblock %}
+{% block content %}
+  <div class="container d-flex align-items-center justify-content-center mt-5">
+    <div class="row g-3">
+      {{ form_start(form, { attr: { 'accept-charset' : 'utf-8' }}) }}
+        <div class="mb-3">
+          {{ form_label(form.file) }}
+          {{ form_widget(form.file) }}
+          {{ form_errors(form.file) }}
+        </div>
+        <div class="mb-3">
+          {{ form_widget(form.save, {'label': "Upload this file", 'attr' : { 'class': 'btn btn-primary' }}) }}
+        </div>
+        {{ form_rest(form) }}
+      {{ form_end(form) }}
+    </div>
+  </div>
+{% endblock %}
